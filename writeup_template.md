@@ -18,20 +18,22 @@
 ### 1. Pipeline:
 
 1. Convert the image to grayscale.
-![alt text][gray]
+![Grayscale][gray]
 2. Get the gradient direction and magnitude at each pixel using Sobel gradients.
-![alt text][dir]
-![alt text][mag]
+![Direction][dir]
+![Magnitude][mag]
 3. Filter the image on gradient magnitude and direction.
     a. Magnitude lowerbound chosen such that only lines with sufficient gradient change (like a lane) are chosen.
     b. Direction bounds chosen so as to filter out horizontal lines.
-![alt text][grad]
+![Gradient][grad]
 4. Blur the output of the gradient filter with a Gaussian
 5. Create a region of interest to mask out where the lanes will likely not be found.
    a. create a mask for the left and right sides.
-![alt text][left]
-![alt text][right]
+![Left][left]
+![Right][right]
 6. For each hough line, obtain the line parameters (x = m * y + b) and then average them. Overlay these averaged lines onto the image.
+![Hough Lines][hough]
+![Final][final]
 
 ### 2. Potential Shortcomings:
 
